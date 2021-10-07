@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpack/Babel-demo</title>
+</head>
+
+<body>
+  <!--
+    This div is added to remove the flicker that comes from bootstrap being loaded
+    first in index.js
+    REMEMBER to set display to "block" in index.js, otherwise you will not see anything
+  -->
+  <div id="all-content" style="display: none;">
+    <ul id="menu" class="header">
+      <li><a href="" id="about">About</a></li>
+      <li><a href="" id="class">Klasse diagram</a></li>
+      <li><a href="" id="ex2">Ex2</a></li>
+      <li><a href="" id="person">Persons</a></li>
+    </ul>
+
+    <div class="content">
+
+      <!-- This is were you should place your basic HTML for exercise-1 -->
+      <div id="classdiagram" style="display:none;">
+        <h3>Exercise 1</h3>
+        <p>Add your basic HTML for Exercise 1 here</p>
+        <ul id="jokes"></ul>
+
+      </div>
+      <!-- End of HTML for exercise-1 -->
+
+
+
+      <!-- This is were you should place your basic HTML for exercise-2 -->
+      <div id="ex2_html" style="display:none;">
+        <h3>Exercise 2</h3>
+        <p id="ex2p">Add your basic HTML for Exercise 2 here</p>
+      </div>
+      <!-- End of HTML for exercise-2 -->
+
+
+      <!-- This is were you should place your basic HTML for exercise-3 -->
+      <div id="persons" style="display:none;">
+          <h3>Personer</h3>
+          <p>Add your basic HTML for Exercise 3 here</p>
+          <div class="row" style="min-height: 5em;">
+          <!-- Find all persons -->
+            <div class = "col-md-8 pre-scrollable" style = "background-color: rgb(127, 219, 255);">
+              <h5> Alle personer </h5>
+              <table class = "table">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Fornavn</th>
+                    <th>Efternavn</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody id = "allPersonsRows">
+              </table>
+            </div>
+          <!-- Find a person by id -->
+            <div class = "col-md-4" style = "background-color: rgb(127, 219, 255);">
+              <h5>Find en person ud fra deres id</h5>
+              <input type ="text"  id = "getPersonByIdtext">
+              <input type = "button" id = getPersonByIdButton value = "find"><br />
+              <div id = "getPersonByIdDiv"></div>
+            </div>
+          </div>
+      </div>
+      <!-- </div> -->
+      <!-- End of HTML for exercise-3 -->
+
+      <!---- HTML for the About page -->
+
+    </div>
+
+    <div id="about_html" style="display:none;">
+      <h3>About</h3>
+      <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+    </div>
+    <!-- End of HTML for ABOUT Page -->
+
+
+    <!--End of all content -->
+  </div>
+
+  <!-- #################################################################-->
+  <!-- IMPORTANT  DO NOT IMPORT ANY JavaScript in this file by YOURSELF -->
+  <!-- #################################################################-->
+
+</body>
+
+</html>
