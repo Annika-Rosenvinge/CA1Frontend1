@@ -2,95 +2,220 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack/Babel-demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack/Babel-demo</title>
 </head>
 
 <body>
-  <!--
-    This div is added to remove the flicker that comes from bootstrap being loaded
-    first in index.js
-    REMEMBER to set display to "block" in index.js, otherwise you will not see anything
-  -->
-  <div id="all-content" style="display: none;">
+<!--
+  This div is added to remove the flicker that comes from bootstrap being loaded
+  first in index.js
+  REMEMBER to set display to "block" in index.js, otherwise you will not see anything
+-->
+<div id="all-content" style="display: none;">
     <ul id="menu" class="header">
-      <li><a href="" id="about">About</a></li>
-      <li><a href="" id="class">Klasse diagram</a></li>
-      <li><a href="" id="ex2">Ex2</a></li>
-      <li><a href="" id="person">Persons</a></li>
+        <li><a href="" id="about">About</a></li>
+        <li><a href="" id="ex1">Klasse diagram</a></li>
+        <li><a href="" id="ex2">Ex2</a></li>
+        <li><a href="" id="ex3">Persons</a></li>
     </ul>
 
     <div class="content">
 
-      <!-- This is were you should place your basic HTML for exercise-1 -->
-      <div id="classdiagram" style="display:none;">
-        <h3>Exercise 1</h3>
-        <p>Add your basic HTML for Exercise 1 here</p>
-        <ul id="jokes"></ul>
+        <!-- klasse diagram -->
+        <div id="ex1_html" style="display:none;">
+            <h3>Klasse diagram</h3>
+            <p>Her er vores klasse diagram og kanban board</p>
+            <div id = "picture" style="background-color: #ff3388"></div>
 
-      </div>
-      <!-- End of HTML for exercise-1 -->
-
-
-
-      <!-- This is were you should place your basic HTML for exercise-2 -->
-      <div id="ex2_html" style="display:none;">
-        <h3>Exercise 2</h3>
-        <p id="ex2p">Add your basic HTML for Exercise 2 here</p>
-      </div>
-      <!-- End of HTML for exercise-2 -->
+        </div>
+        <!-- End of HTML for klasse diagram -->
 
 
-      <!-- This is were you should place your basic HTML for exercise-3 -->
-      <div id="persons" style="display:none;">
-          <h3>Personer</h3>
-          <p>Add your basic HTML for Exercise 3 here</p>
-          <div class="row" style="min-height: 5em;">
-          <!-- Find all persons -->
-            <div class = "col-md-8 pre-scrollable" style = "background-color: rgb(127, 219, 255);">
-              <h5> Alle personer </h5>
-              <table class = "table">
-                <thead>
-                  <tr>
-                    <th>Id</th>
-                    <th>Fornavn</th>
-                    <th>Efternavn</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody id = "allPersonsRows">
-              </table>
+        <!-- This is were you should place your basic HTML for exercise-2 -->
+        <div id="ex2_html" style="display:none;">
+            <h3>Exercise 2</h3>
+            <p id="ex2p">Add your basic HTML for Exercise 2 here</p>
+        </div>
+        <!-- End of HTML for exercise-2 -->
+
+
+        <!-- This is were you should place your basic HTML for exercise-3 -->
+        <div id="ex3_html" style="display:none;">
+            <h3>Personer</h3>
+            <p>All dem peeps</p>
+            <div class="row" style="min-height: 5em;">
+                <!-- Find all persons -->
+                <div class="col-md-8 pre-scrollable" style="background-color: rgb(127, 219, 255);">
+                    <h5> Alle personer </h5>
+                    <table class="table" id=personlist>
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Hobbies</th>
+                            <th>Phones</th>
+                            <th>Phone description</th>
+                            <th>Street</th>
+                            <th>AdditionalInfo</th>
+                            <th>City</th>
+                            <th>Zip</th>
+                        </tr>
+                        </thead>
+                        <tbody id="allPersonsRows">
+
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <!-- Add person virker ikke 500 fejl kode-->
+                <div class="col-md-4" style="background-color: rgb(127,219,255);">
+                    <h5 style = "margin-top:20px">Her kan du tilføje en person til systemet</h5>
+                    <p>Du skal indtaste informationerne herunder</p>
+                    <p>Bemærk hver email kan kun bruges en gang</p>
+
+                    <table class="table" id="addAPerson">
+                        <tr>
+                            <td>Fornavn</td>
+                            <td><label for="personFirstName"></label>
+                                <input type="text" id="personFirstName"/></td>
+                        </tr>
+                        <tr>
+                            <td>Efternavn</td>
+                            <td><label for="personLastName"></label>
+                                <input type="text" id="personLastName"/></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><label for="personEmail"></label>
+                                <input type="text" id="personEmail"/></td>
+                        </tr>
+                        <tr>
+                            <td>Hobby navn</td>
+                            <td><label for="personHobbyName"></label>
+                                <input type="text" id="personHobbyName"/></td>
+                        </tr>
+                        <tr>
+                            <td>Hobby kategori</td>
+                            <td><label for="personHobbyCategory"></label>
+                                <input type="text" id="personHobbyCategory"/></td>
+                        </tr>
+                        <tr>
+                            <td>Hobby wikilink</td>
+                            <td><label for="personHobbyWikilink"></label>
+                                <input type="text" id="personHobbyWikilink"/></td>
+                        </tr>
+                        <tr>
+                            <td>Hobby type</td>
+                            <td><label for="personHobbyType"></label>
+                                <input type="text" id="personHobbyType"/></td>
+                        </tr>
+                        <tr>
+                            <td>Telefon</td>
+                            <td><label for="personPhone"></label>
+                                <input type="text" id="personPhone"/></td>
+                        </tr>
+                        <tr>
+                            <td>Telefon beskrivelse</td>
+                            <td><label for="personPhoneDes"></label>
+                                <input type="text" id="personPhoneDes"/></td>
+                        </tr>
+                        <tr>
+                            <td>Vejnavn</td>
+                            <td><label for="personStreet"></label>
+                                <input type="text" id="personStreet"/></td>
+                        </tr>
+                        <tr>
+                            <td>Mere Info</td>
+                            <td><label for="personAddInfo"></label>
+                                <input type="text" id="personAddInfo"/></td>
+                        </tr>
+                        <tr>
+                            <td>By</td>
+                            <td><label for="personCity"></label>
+                                <input type="text" id="personCity"/></td>
+                        </tr>
+                        <tr>
+                            <td>Postnummer</td>
+                            <td><label for="personzip"></label>
+                                <input type="text" id="personzip"/></td>
+                        </tr>
+                    </table>
+                    <input type = "button" id = "addAPersonButton" value = "Add">
+                    <div id = "addAPersonResult"></div>
+                </div>
+                <br/>
+                <!-- Find a person by id, men kan ikke finde first og last name (っ °Д °)っ -->
+                <div class="col-md-4" style="background-color: rgb(127, 219, 255);">
+                    <h5 style = "margin-top:20px">Find en person ud fra deres id</h5>
+                    <label for="getPersonByIdText"></label>
+                    <input type="text" id="getPersonByIdText">
+                    <input type="button" id=getPersonByIdButton value="find">
+                    <br/>
+                    <div id="getPersonByIdDiv"></div>
+                </div>
+                <br>
+                <!-- Delete person den viser det ikke det rigtige sted -->
+                <div class = "col-md-4" style = "background-color: rgb(127,219,255);">
+                    <h5 style = "margin-top:20px"> Skriv id'et på den person du gerne vil slette fra systemet </h5>
+                    <p>Bemærk når en person først er slettet så kan det ikke gøres om igen</p>
+                    <label for="deletePersonByIdText"></label>
+                    <input type = "text" id = "deletePersonByIdText">
+                    <input type = "button" id = "deletePersonByIdButton" value = "delete">
+                    <br/>
+                    <div id = deletePersonByIdDiv style = "background-color: #ff3388"></div>
+                </div>
+                <!-- Edit person -->
+                <div class = "col-md-4" style = "background-color: #4caf50;">
+                    <h5> Du skal indtaste id'et og de nye informationer på den der skal ændres</h5>
+                    <p>Husk at vælge det rigtige id</p>
+                    <table class ="table" id = "editPersonTable">
+                        <tr>
+                            <td>id</td>
+                            <td><label for = "editPersonId"></label>
+                                <input type = "text" id = "editPersonId">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fornavn</td>
+                            <td><label for="editPersonFirstName"></label>
+                                <input type="text" id="editPersonFirstName"/></td>
+                        </tr>
+                        <tr>
+                            <td>Efternavn</td>
+                            <td><label for="editPersonLastName"></label>
+                                <input type="text" id="editPersonLastName"/></td>
+                        </tr>
+                    </table>
+                    <input type = "button" id = "editPersonButton" value = "send ny informationer">
+                </div>
             </div>
-          <!-- Find a person by id -->
-            <div class = "col-md-4" style = "background-color: rgb(127, 219, 255);">
-              <h5>Find en person ud fra deres id</h5>
-              <input type ="text"  id = "getPersonByIdtext">
-              <input type = "button" id = getPersonByIdButton value = "find"><br />
-              <div id = "getPersonByIdDiv"></div>
-            </div>
-          </div>
-      </div>
-      <!-- </div> -->
-      <!-- End of HTML for exercise-3 -->
+        </div>
 
-      <!---- HTML for the About page -->
+
+
+        <!-- End of HTML for exercise-3 -->
+
+        <!---- HTML for the About page -->
 
     </div>
 
     <div id="about_html" style="display:none;">
-      <h3>About</h3>
-      <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+        <h3>About</h3>
+        <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
     </div>
     <!-- End of HTML for ABOUT Page -->
 
 
     <!--End of all content -->
-  </div>
+</div>
 
-  <!-- #################################################################-->
-  <!-- IMPORTANT  DO NOT IMPORT ANY JavaScript in this file by YOURSELF -->
-  <!-- #################################################################-->
+<!-- #################################################################-->
+<!-- IMPORTANT  DO NOT IMPORT ANY JavaScript in this file by YOURSELF -->
+<!-- #################################################################-->
 
 </body>
 
